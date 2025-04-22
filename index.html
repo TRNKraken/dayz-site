@@ -5,84 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DayZ Ammo Tracker</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .card {
-      @apply rounded-xl shadow p-4 flex flex-col gap-2 w-full max-w-xl mx-auto;
-    }
-    .card:nth-child(even) {
-      background-color: #1f2937; /* gray-800 */
-    }
-    .card:nth-child(odd) {
-      background-color: #374151; /* gray-700 */
-    }
-    .card strong, .card span, .card br, .card p {
-      color: white;
-    }
-    .card img {
-      @apply w-24 h-auto mb-2 rounded;
-    }
-  </style>
 </head>
-<body class="bg-gray-900 text-white p-6">
-  <!-- Dropdown Caliber Selector -->
-  <div class="flex justify-center mb-6">
-    <select id="caliberSelect" class="px-4 py-2 rounded shadow border border-gray-700 bg-gray-800 text-white" onchange="filterCaliber(this.value)">
-      <option value="all">Choose a caliber...</option>
-      <option value="556">5.56x45mm</option>
-      <option value="762">7.62x39mm</option>
-      <option value="919">9x19mm</option>
-    </select>
-  </div>
-
-  <h1 class="text-3xl font-bold text-center mb-6">DayZ Ammo Tracker</h1>
-
-  <!-- Cards Container (List Style) -->
-  <div id="cards" class="space-y-4">
-    <div class="card caliber-556">
-      <img src="images/556_hp.png" alt="5.56x45mm HP">
-      <strong>5.56x45mm HP</strong><br>
-      <span>Compatible Weapons: M4A1, AUG, LAR</span><br>
-      <span>Health: 95 | Blood: 150 | Shock: 125</span>
-    </div>
-    <div class="card caliber-556">
-      <img src="images/556_m856.png" alt="5.56x45mm M856">
-      <strong>5.56x45mm M856</strong><br>
-      <span>Compatible Weapons: M4A1, AUG</span><br>
-      <span>Health: 115 | Blood: 100 | Shock: 70</span>
-    </div>
-    <div class="card caliber-762">
-      <img src="images/762_ps.png" alt="7.62x39mm PS">
-      <strong>7.62x39mm PS</strong><br>
-      <span>Compatible Weapons: AKM, SKS</span><br>
-      <span>Health: 120 | Blood: 160 | Shock: 80</span>
-    </div>
-    <div class="card caliber-762">
-      <img src="images/762_t45.png" alt="7.62x39mm T45">
-      <strong>7.62x39mm T45</strong><br>
-      <span>Compatible Weapons: AKM</span><br>
-      <span>Health: 130 | Blood: 140 | Shock: 90</span>
-    </div>
-    <div class="card caliber-919">
-      <img src="images/919_fmj.png" alt="9x19mm FMJ">
-      <strong>9x19mm FMJ</strong><br>
-      <span>Compatible Weapons: FX-45, CR-75</span><br>
-      <span>Health: 60 | Blood: 80 | Shock: 70</span>
-    </div>
-    <div class="card caliber-919">
-      <img src="images/919_hp.png" alt="9x19mm HP">
-      <strong>9x19mm HP</strong><br>
-      <span>Compatible Weapons: FX-45, CR-75</span><br>
-      <span>Health: 55 | Blood: 90 | Shock: 75</span>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-6">
+  <div class="max-w-2xl w-full text-center">
+    <h1 class="text-4xl font-bold mb-8">Select a Caliber</h1>
+    <div class="space-y-4">
+      <a href="556.html" class="block w-full py-4 px-6 rounded bg-gray-800 hover:bg-gray-700 text-white text-xl">5.56x45mm</a>
+      <a href="762.html" class="block w-full py-4 px-6 rounded bg-gray-800 hover:bg-gray-700 text-white text-xl">7.62x39mm</a>
+      <a href="919.html" class="block w-full py-4 px-6 rounded bg-gray-800 hover:bg-gray-700 text-white text-xl">9x19mm</a>
     </div>
   </div>
-
-  <script>
-    function filterCaliber(caliber) {
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        card.style.display = (caliber === 'all' || card.classList.contains('caliber-' + caliber)) ? 'block' : 'none';
-      });
-    }
-  </script>
 </body>
 </html>
