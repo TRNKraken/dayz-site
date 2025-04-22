@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5.56x45mm Ammo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card {
+      @apply rounded-xl shadow p-4 flex flex-col gap-2 w-full max-w-xl mx-auto;
+    }
+    .card:nth-child(even) { background-color: #1f2937; }
+    .card:nth-child(odd) { background-color: #374151; }
+    .card * { color: white; }
+    .card img { @apply w-24 h-auto mb-2 rounded; }
+  </style>
+</head>
+<body class="bg-gray-900 text-white p-6">
+  <h1 class="text-3xl font-bold text-center mb-6">5.56x45mm Ammo</h1>
+  <div class="space-y-4">
+    
+        <div class="card">
+          <img src="images/556_hp.png" alt="5.56x45mm HP">
+          <strong>5.56x45mm HP</strong><br>
+          <span>Compatible Weapons: M4A1, AUG, LAR</span><br>
+          <span>Health: 95 | Blood: 150 | Shock: 125</span>
+        </div>
+        
+        <div class="card">
+          <img src="images/556_m856.png" alt="5.56x45mm M856">
+          <strong>5.56x45mm M856</strong><br>
+          <span>Compatible Weapons: M4A1, AUG</span><br>
+          <span>Health: 115 | Blood: 100 | Shock: 70</span>
+        </div>
+        
+  </div>
+</body>
+</html>
