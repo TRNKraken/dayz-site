@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Weapon Category</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white p-6">
+  <div class="max-w-3xl mx-auto">
+    <nav class="flex justify-between items-center mb-6">
+      <a href="..\index.html" class="text-blue-400 hover:underline">Home</a>
+      <div class="relative">
+        <button id="dropdownToggle" class="bg-gray-800 px-4 py-2 rounded text-white">Weapons ▼</button>
+        <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded shadow-lg z-10">
+          <a href="ammo.html" class="block px-4 py-2 hover:bg-gray-700">Ammo</a>
+          <a href="weapons.html" class="block px-4 py-2 hover:bg-gray-700">Weapons</a>
+        </div>
+      </div>
+    </nav>
+    <h1 class="text-3xl font-bold text-center mb-6">Select a Weapon Category</h1>
+    <div class="grid gap-4">
+      <a href="rifles.html" class="bg-gray-700 p-4 rounded text-center text-xl hover:bg-gray-600">Rifles</a>
+      <a href="smgs.html" class="bg-gray-700 p-4 rounded text-center text-xl hover:bg-gray-600">SMGs</a>
+      <a href="pistols.html" class="bg-gray-700 p-4 rounded text-center text-xl hover:bg-gray-600">Pistols</a>
+    </div>
+  </div>
+  <script>
+    const toggle = document.getElementById('dropdownToggle');
+    const menu = document.getElementById('dropdownMenu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+    window.addEventListener('click', (e) => {
+      if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
