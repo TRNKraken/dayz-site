@@ -2,18 +2,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DayZ Ammo & Weapon Tracker</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DayZ Ammo Tracker</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="script.js"></script>
+  <style>
+    .card { @apply bg-white rounded-xl shadow p-4 mb-4; }
+    .nav-button { @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded mb-2 mr-2; }
+  </style>
 </head>
-<body class="bg-gray-100 p-4">
-  <h1 class="text-3xl font-bold mb-4 text-center">Ammo & Weapon Tracker</h1>
-  <div id="app" class="grid md:grid-cols-2 gap-4"></div>
-  <div class="text-center mt-4">
-    <input type="file" id="jsonUpload" class="mb-2">
-    <button onclick="downloadJSON()" class="bg-blue-500 text-white px-4 py-2 rounded">Download JSON</button>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-3xl font-bold text-center mb-6">DayZ Ammo Tracker</h1>
+
+  <!-- Caliber Filter Buttons -->
+  <div class="flex flex-wrap justify-center mb-6" id="caliber-buttons">
+    <button class="nav-button" onclick="filterCaliber('all')">Show All</button>
+    <button class="nav-button" onclick="filterCaliber('556')">5.56x45mm</button>
+    <button class="nav-button" onclick="filterCaliber('762')">7.62x39mm</button>
+    <button class="nav-button" onclick="filterCaliber('919')">9x19mm</button>
   </div>
+
+  <!-- Cards Container -->
+  <div id="cards" class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div class="card caliber-556"><strong>5.56x45mm HP</strong><br>Health: 95<br>Blood: 150<br>Shock: 125</div>
+    <div class="card caliber-556"><strong>5.56x45mm M856</strong><br>Health: 115<br>Blood: 100<br>Shock: 70</div>
+    <div class="card caliber-762"><strong>7.62x39mm PS</strong><br>Health: 120<br>Blood: 160<br>Shock: 80</div>
+    <div class="card caliber-762"><strong>7.62x39mm T45</strong><br>Health: 130<br>Blood: 140<br>Shock: 90</div>
+    <div class="card caliber-919"><strong>9x19mm FMJ</strong><br>Health: 60<br>Blood: 80<br>Shock: 70</div>
+    <div class="card caliber-919"><strong>9x19mm HP</strong><br>Health: 55<br>Blood: 90<br>Shock: 75</div>
+  </div>
+
+  <script>
+    function filterCaliber(caliber) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.style.display = (caliber === 'all' || card.classList.contains('caliber-' + caliber)) ? 'block' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>
