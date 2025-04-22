@@ -6,16 +6,27 @@
   <title>DayZ Ammo Tracker</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .card { @apply bg-white rounded-xl shadow p-4 mb-4 flex flex-col gap-2; }
-    .nav-button { @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded mb-2 mr-2; }
-    input { @apply border border-gray-300 rounded px-2 py-1 w-16 text-center; }
-    .card img { @apply w-24 h-auto mb-2 rounded; }
+    .card {
+      @apply rounded-xl shadow p-4 flex flex-col gap-2 w-full max-w-xl mx-auto;
+    }
+    .card:nth-child(even) {
+      background-color: #1f2937; /* gray-800 */
+    }
+    .card:nth-child(odd) {
+      background-color: #374151; /* gray-700 */
+    }
+    .card strong, .card span, .card br, .card p {
+      color: white;
+    }
+    .card img {
+      @apply w-24 h-auto mb-2 rounded;
+    }
   </style>
 </head>
-<body class="bg-gray-100 p-6">
+<body class="bg-gray-900 text-white p-6">
   <!-- Dropdown Caliber Selector -->
   <div class="flex justify-center mb-6">
-    <select id="caliberSelect" class="px-4 py-2 rounded shadow border border-gray-300" onchange="filterCaliber(this.value)">
+    <select id="caliberSelect" class="px-4 py-2 rounded shadow border border-gray-700 bg-gray-800 text-white" onchange="filterCaliber(this.value)">
       <option value="all">Choose a caliber...</option>
       <option value="556">5.56x45mm</option>
       <option value="762">7.62x39mm</option>
@@ -30,50 +41,38 @@
     <div class="card caliber-556">
       <img src="images/556_hp.png" alt="5.56x45mm HP">
       <strong>5.56x45mm HP</strong><br>
-      Compatible Weapons: M4A1, AUG, LAR<br>
-      Health: <input type="number" value="95"> |
-      Blood: <input type="number" value="150"> |
-      Shock: <input type="number" value="125">
+      <span>Compatible Weapons: M4A1, AUG, LAR</span><br>
+      <span>Health: 95 | Blood: 150 | Shock: 125</span>
     </div>
     <div class="card caliber-556">
       <img src="images/556_m856.png" alt="5.56x45mm M856">
       <strong>5.56x45mm M856</strong><br>
-      Compatible Weapons: M4A1, AUG<br>
-      Health: <input type="number" value="115"> |
-      Blood: <input type="number" value="100"> |
-      Shock: <input type="number" value="70">
+      <span>Compatible Weapons: M4A1, AUG</span><br>
+      <span>Health: 115 | Blood: 100 | Shock: 70</span>
     </div>
     <div class="card caliber-762">
       <img src="images/762_ps.png" alt="7.62x39mm PS">
       <strong>7.62x39mm PS</strong><br>
-      Compatible Weapons: AKM, SKS<br>
-      Health: <input type="number" value="120"> |
-      Blood: <input type="number" value="160"> |
-      Shock: <input type="number" value="80">
+      <span>Compatible Weapons: AKM, SKS</span><br>
+      <span>Health: 120 | Blood: 160 | Shock: 80</span>
     </div>
     <div class="card caliber-762">
       <img src="images/762_t45.png" alt="7.62x39mm T45">
       <strong>7.62x39mm T45</strong><br>
-      Compatible Weapons: AKM<br>
-      Health: <input type="number" value="130"> |
-      Blood: <input type="number" value="140"> |
-      Shock: <input type="number" value="90">
+      <span>Compatible Weapons: AKM</span><br>
+      <span>Health: 130 | Blood: 140 | Shock: 90</span>
     </div>
     <div class="card caliber-919">
       <img src="images/919_fmj.png" alt="9x19mm FMJ">
       <strong>9x19mm FMJ</strong><br>
-      Compatible Weapons: FX-45, CR-75<br>
-      Health: <input type="number" value="60"> |
-      Blood: <input type="number" value="80"> |
-      Shock: <input type="number" value="70">
+      <span>Compatible Weapons: FX-45, CR-75</span><br>
+      <span>Health: 60 | Blood: 80 | Shock: 70</span>
     </div>
     <div class="card caliber-919">
       <img src="images/919_hp.png" alt="9x19mm HP">
       <strong>9x19mm HP</strong><br>
-      Compatible Weapons: FX-45, CR-75<br>
-      Health: <input type="number" value="55"> |
-      Blood: <input type="number" value="90"> |
-      Shock: <input type="number" value="75">
+      <span>Compatible Weapons: FX-45, CR-75</span><br>
+      <span>Health: 55 | Blood: 90 | Shock: 75</span>
     </div>
   </div>
 
