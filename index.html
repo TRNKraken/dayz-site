@@ -5,15 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DayZ Ammo Tracker</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .caliber-link {
+      display: block;
+      background-color: #374151;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-size: 1.25rem;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    .caliber-link:hover {
+      background-color: #4b5563;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-6">
-  <div class="max-w-2xl w-full text-center">
-    <h1 class="text-4xl font-bold mb-8">Select a Caliber</h1>
-    <div class="space-y-4">
-      <a href="556.html" class="block w-full py-4 px-6 rounded bg-gray-800 hover:bg-gray-700 text-white text-xl">5.56x45mm</a>
-      <a href="762.html" class="block w-full py-4 px-6 rounded bg-gray-800 hover:bg-gray-700 text-white text-xl">7.62x39mm</a>
-      <a href="919.html" class="block w-full py-4 px-6 rounded bg-gray-800 hover:bg-gray-700 text-white text-xl">9x19mm</a>
-    </div>
+<body class="bg-gray-900 text-white p-6">
+  <h1 class="text-3xl font-bold text-center mb-6">Select a Caliber</h1>
+  <div class="max-w-2xl mx-auto">
+    <a href="556.html" class="caliber-link">5.56x45mm</a>
+    <a href="9x19.html" class="caliber-link">9x19mm</a>
+    <a href="762.html" class="caliber-link">7.62x39mm</a>
   </div>
 </body>
 </html>
